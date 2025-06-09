@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main-content-container">
+        <div class="user-info-top">
+            <span id="displayUsername"></span>
+            <button id="logoutButton">Cerrar Sesión</button>
+        </div>
+
+        <h2>Contenido Principal de la Aplicación</h2>
+        <p>Aquí podrías mostrar datos, gráficos o funcionalidades clave.</p>
+
+        <div class="audio-test-section">
+            <h3>Programa de Nivel de Audición</h3>
+            <p>Introduce el nivel de decibelios (dB) escuchado para determinar el nivel de audición.</p>
+            <div class="input-group">
+                <label for="decibels">Decibelios (dB):</label>
+                <input type="number" id="decibels" min="0" max="120" placeholder="Ej: 35">
+            </div>
+            <button id="checkAudition">Evaluar Audición</button>
+            <!-- Aquí la gráfica y el aula asignada -->
+            <canvas id="auditionChart" width="400" height="180" style="margin-top:20px;"></canvas>
+            <p id="aulaResult" class="message"></p>
+            <p id="auditionResult" class="message"></p>
+        </div>
+
+        <div class="sound-emitter-section">
+            <h3>Emisor de Sonido de Prueba</h3>
+            <p>Haz clic para emitir un sonido fuerte (simulando 100 dB) para tu prueba de audición.</p>
+            <button id="emitSoundButton">Emitir Sonido (100 dB)</button>
+            <button id="stopSoundButton">Detener Sonido</button>
+            <audio id="testAudio" src="tono.wav.mp3" preload="auto" muted></audio>
+            <progress id="audioProgress" value="0" max="100" style="width: 100%; margin-top: 10px;"></progress>
+            <div class="progress-labels">
+                <span style="left:0%">0 dB</span>
+                <span style="left:20%">20 dB</span>
+                <span style="left:40%">40 dB</span>
+                <span style="left:90%">90 dB</span>
+                <span style="left:100%">100 dB</span>
+            </div>
+            <p id="soundMessage" class="message"></p>
+        </div>
+
+        <!-- BANNERS INFORMATIVOS DINÁMICOS -->
+        <div class="info-banners">
+            <div class="banner">
+                <img src="comunicacion.jpeg" alt="Comunicación y comprensión" class="banner-img">
+                <h4>🦻 ¿Qué es la pérdida auditiva?</h4>
+                <p>Es la disminución parcial o total de la capacidad para escuchar sonidos en uno o ambos oídos.</p>
+                <div class="extra-info">La pérdida auditiva puede afectar la comunicación y la calidad de vida. Consulta a un especialista si tienes dudas.</div>
+            </div>
+            <div class="banner">
+                <img src="audicion1.jpeg" alt="Causas" class="banner-img">
+                <h4>🔊 Causas comunes</h4>
+                <p>Exposición a ruidos fuertes, infecciones, envejecimiento, factores genéticos o lesiones.</p>
+                <div class="extra-info">Evita la exposición prolongada a ruidos fuertes y protege tus oídos en ambientes ruidosos.</div>
+            </div>
+            <div class="banner">
+                <img src="causas.jpg" alt="Prevención" class="banner-img">
+                <h4>🛡️ Prevención</h4>
+                <p>Evita ruidos fuertes, usa protección auditiva y realiza chequeos periódicos.</p>
+                <div class="extra-info">El uso de tapones y revisiones periódicas ayudan a prevenir daños auditivos.</div>
+            </div>
+            <div class="banner">
+                <img src="afectacion.jpeg" alt="Diagnóstico" class="banner-img">
+                <h4>🩺 Importancia del diagnóstico</h4>
+                <p>Detectar a tiempo la pérdida auditiva mejora la calidad de vida y la comunicación.</p>
+                <div class="extra-info">Un diagnóstico temprano permite tratamientos más efectivos y mejor adaptación.</div>
+            </div>
+        </div>
+
+        <p class="mt-20">Este es un ejemplo de contenido adicional en tu dashboard.</p>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script>
+    // Interactividad para banners (expandir/cerrar info extra)
+    document.querySelectorAll('.banner').forEach(banner => {
+        banner.addEventListener('click', () => {
+            banner.classList.toggle('expanded');
+        });
+    });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,303 @@
+/* --- Estilos generales --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- Login --- */
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px #007bff44;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+button[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.message.error {
+    color: #dc3545;
+}
+
+.message.success {
+    color: #28a745;
+}
+
+.message.normal {
+    color: #333;
+}
+
+.message.warning {
+    color: #ffc107;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+/* --- Contenedor principal --- */
+.main-content-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* --- Usuario y sesión --- */
+.user-info-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info-top span {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+.user-info-top button {
+    width: auto;
+    padding: 8px 15px;
+    background-color: #dc3545;
+    margin-top: 0;
+}
+
+.user-info-top button:hover {
+    background-color: #c82333;
+}
+
+/* --- Secciones de prueba y sonido --- */
+.audio-test-section,
+.sound-emitter-section {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #f9f9f9;
+}
+
+.audio-test-section h3,
+.sound-emitter-section h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* --- Barra de progreso y etiquetas --- */
+progress[value]::-webkit-progress-value {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    transition: background 0.5s;
+}
+progress[value]::-moz-progress-bar {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+}
+progress[value] {
+    accent-color: #007bff;
+}
+.progress-labels {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+.progress-labels span {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 0.85em;
+    color: #007bff;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* --- Banners informativos --- */
+.info-banners {
+    display: flex;
+    gap: 16px;
+    margin: 30px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.banner {
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 18px 14px;
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 260px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.7s forwards;
+}
+.banner:nth-child(1) { animation-delay: 0.1s; }
+.banner:nth-child(2) { animation-delay: 0.2s; }
+.banner:nth-child(3) { animation-delay: 0.3s; }
+.banner:nth-child(4) { animation-delay: 0.4s; }
+.banner:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    background: #e3f2fd;
+}
+.banner-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+.banner h4 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.1em;
+}
+.banner p {
+    margin: 8px 0 0 0;
+    font-size: 0.98em;
+    color: #333;
+}
+.extra-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #444;
+    background: #fffbe6;
+    border-radius: 6px;
+    padding: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.banner.expanded .extra-info {
+    display: block;
+    animation: fadeIn 0.4s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- Transición de inicio de sesión --- */
+.transition-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #007bff;
+    color: #fff;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-family: sans-serif;
+    animation: fadeIn 0.7s;
+}
+.transition-overlay.active {
+    display: flex;
+    animation: fadeIn 0.7s;
+}
+.transition-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+.spinner {
+    border: 8px solid #fff;
+    border-top: 8px solid #0056b3;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
